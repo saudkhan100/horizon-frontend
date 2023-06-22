@@ -20,10 +20,11 @@ const ProductForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData)
-    axios.post('http://localhost:8000/products', formData)
+    axios.post('https://horizon-backend-nn8o.onrender.com/products', formData)
       .then((response) => {
         console.log('Product saved successfully!');
         setFormData({
+          id:'',
           title: '',
           price: '',
           category: '',
@@ -49,6 +50,20 @@ const ProductForm = () => {
           id="title"
           name="title"
           value={formData.title}
+          onChange={handleChange}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="title" className="block text-gray-700 text-sm font-bold mb-2">
+          id:
+        </label>
+        <input
+          type="Number"
+          id="id"
+          name="id"
+          value={formData.id}
           onChange={handleChange}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />

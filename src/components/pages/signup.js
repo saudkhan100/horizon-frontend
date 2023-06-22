@@ -2,6 +2,7 @@ import './loginsignup.css';
 import { Link } from 'react-router-dom';
 import React, { useRef, useState } from "react";
 import axios from 'axios';
+import {postUsers} from '../../services/api'
 
 const Signup = () => {
   const emailRef = useRef(null);
@@ -11,7 +12,7 @@ const Signup = () => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-
+    await postUsers({email,password})
    
   };
 
