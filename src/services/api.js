@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url='http://localhost:8000';
+const url='https://horizon-backend-nn8o.onrender.com';
 
 export const getProducts = async ()=>{
     try{
